@@ -1,0 +1,8 @@
+{
+
+  "excluded_files_or_folders":[
+    "exclude_this_file.js",
+    "exclude_this_folder",
+    "node_modules"
+  ]
+}

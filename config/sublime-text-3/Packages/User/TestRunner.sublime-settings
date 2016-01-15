@@ -1,0 +1,6 @@
+{
+  "test_command": "mocha test/core/price.test.js -R tap",
+  "test_on_save": false,
+  "show_panel_default": false,
+  "test_override": false,
+}

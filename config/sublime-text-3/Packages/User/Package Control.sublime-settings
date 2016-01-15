@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"AutoCompleteJS",
+		"DocBlockr",
+		"Gist",
+		"Git",
+		"GitDiffHelper",
+		"GitGutter",
+		"Github Tools",
+		"JavaScript & NodeJS Snippets",
+		"JavaScriptNext - ES6 Syntax",
+		"JS Coverage",
+		"JsFormat",
+		"Markdown Preview",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"Terminal",
+		"Terminality",
+		"TrailingSpaces"
+	]
+}
