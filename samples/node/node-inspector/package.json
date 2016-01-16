@@ -1,0 +1,28 @@
+{
+  "name": "node-inspector",
+  "version": "1.0.0",
+  "description": "node-inspector samples",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "debug": "DEBUG=1 node-debug --save-live-edit --debug-brk --web-port=8081 app.js"
+  },
+  "keywords": [
+    "node",
+    "node-inspector",
+    "debugging",
+    "sample"
+  ],
+  "author": "Gilles Rasigade",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GillesRasigade/development-environment.git"
+  },
+  "devDependencies": {
+    "should": "^8.1.1"
+  }
+}
