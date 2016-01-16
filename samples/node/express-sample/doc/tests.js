@@ -60,4 +60,5 @@ var walkSync = function(dir, filelist) {
   return filelist;
 };
 
+console.log('>> Producing tests documentation:');
 walkSync('./test/');

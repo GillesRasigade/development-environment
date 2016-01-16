@@ -9,7 +9,7 @@ Tests describing the index page.
 #### It renders successfully
 
 
-The page is answering correctly to '/' and with a body content containing
+The page is answering to '/' with a status 200 and a body text containing
 'Express' in its response.
 
 
