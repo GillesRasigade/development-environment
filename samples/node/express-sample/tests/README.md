@@ -1,7 +1,7 @@
 # Tests report
 
-## [Index Page](./index/README.md)
+## [/ - Main page](./index/README.md)
 
-Index page tests
+Main page
 
 - renders successfully

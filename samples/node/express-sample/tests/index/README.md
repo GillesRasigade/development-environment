@@ -1,9 +1,9 @@
 
 
-## Index Page
+## / - Main page
 
 
-Index page tests
+Main page
 
 
 #### It renders successfully
