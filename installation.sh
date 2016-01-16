@@ -40,6 +40,16 @@ function install_once() {
   done
 }
 
+function npm_install_once() {
+  for package in "$@"; do
+    r=$( npm -g ls "$package" | grep "$package" )
+    if [ "" == "$r" ]; then
+      e "Installing npm package $package"
+      npm install -g "$package"
+    fi
+  done
+}
+
 USER=$( whoami )
 PWD=$( pwd )
 
@@ -106,10 +116,14 @@ function installation() {
   . "$NVM_DIR/nvm.sh"
 
   # Installing Node 5
-  nvm install
+  r=$( nvm ls | grep $( cat .nvmrc ) );
+  if [ "" == "$r" ]; then
+    nvm install
+  fi
 
   # Installing development global dependencies
-  npm install -g grunt-cli bower mocha istanbul nodemon node-inspector express-generator
+  e "Installing missing npm packages"
+  npm_install_once grunt-cli bower mocha istanbul nodemon node-inspector express-generator
 
 }
 
