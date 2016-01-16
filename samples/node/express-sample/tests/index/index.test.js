@@ -1,7 +1,7 @@
 /**
- * Index page tests
+ * Main page
  */
-describe('Index Page', function() {
+describe('/ - Main page', function() {
 
   /**
    * The page is answering to '/' with a status 200 and a body text containing
