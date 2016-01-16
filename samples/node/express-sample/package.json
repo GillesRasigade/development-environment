@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "NODE_ENV=test istanbul cover _mocha -- -b --recursive --require ./test/bootstrap.js && node doc/tests",
-    "doc": "node doc/tests"
+    "test": "NODE_ENV=test istanbul cover _mocha -- -b --recursive --require ./test/bootstrap.js && node bin/tests",
+    "doc": "node bin/tests"
   },
   "dependencies": {
     "acquit": "^0.4.1",
