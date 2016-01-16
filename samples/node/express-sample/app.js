@@ -32,6 +32,10 @@ swagger('api.json', api, function(err, middleware){
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.set('env', process.env.NODE_ENV || 'production');
+
+console.log( app.get('env'));
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -41,7 +45,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Expose the API documentations:
-app.use('/docs',express.static('public/docs'));
+app.use('/docs',express.static(__dirname + '/public/docs'));
+
+if (app.get('env') === 'development') {
+  app.use("/coverage", express.static(__dirname + '/coverage/lcov-report'));
+}
 
 // Expose basic routes not directly attached to the API:
 app.use('/', routes);
@@ -62,6 +70,9 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
+
+  app.use("/coverage", express.static(__dirname + '/coverage/lcov-report'));
+
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
