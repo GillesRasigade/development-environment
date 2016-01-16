@@ -49,7 +49,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras jira docker node npm nvm supervisor)
+plugins=(git git-extras jira docker node npm nvm node-debug supervisor)
 
 # User configuration
 
