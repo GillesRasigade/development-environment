@@ -51,11 +51,16 @@ function init() {
   e "Checking personal configuration"
 
   # Git:
-  if [ ! -f "~/.gitconfig" ]; then
-    t "Initializing git"
-    rm -f "/home/${USER}/.gitconfig"
-    cp "${PWD}/config/git/.gitconfig" "/home/${USER}/.gitconfig"
+  t "Initializing git"
+  if [ -f "/home/${USER}/.gitconfig" ]; then
+    email=$( git config --global user.email );
   fi
+
+  rm -f "/home/${USER}/.gitconfig"
+  cp "${PWD}/config/git/.gitconfig" "/home/${USER}/.gitconfig"
+
+  # Updating the user email (not stored in the gitconfig):
+  git config --global user.email "${email}"
 
   # Sublime Text:
   if [ ! -e "~/.config/sublime-text-3/Packages/User" ]; then
@@ -100,7 +105,7 @@ function installation() {
   . "$NVM_DIR/nvm.sh"
 
   # Installing Node 5
-  nvm install 5
+  nvm install
 
   # Installing development global dependencies
   npm install -g grunt-cli bower mocha istanbul nodemon node-inspector express-generator
