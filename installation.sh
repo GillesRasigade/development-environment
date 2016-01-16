@@ -3,6 +3,7 @@
 # Development environment installation script
 #
 
+{ # this ensures the entire script is downloaded #
 
 function e() { echo -e "> $1"; }
 function t() { echo -e "\n* * * $1 * * *"; }
@@ -118,3 +119,5 @@ installation
 init
 
 exit 0
+
+} # this ensures the entire script is downloaded #
