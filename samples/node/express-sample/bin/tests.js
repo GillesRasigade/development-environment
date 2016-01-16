@@ -19,13 +19,13 @@ var generate = function ( dir , file ) {
     var describe = blocks[i];
 
     mdOutput += '## ' + describe.contents + '\n\n';
-    report += '## [' +describe.contents + ']('+link+')\n\n';
+    report += '\n## [' +describe.contents + ']('+link+')\n';
     // console.log(dir.replace(testsDir,'./')+doc+'.md');
 
     var comment = describe.comments[0] ?
-      acquit.trimEachLine(describe.comments[0]) + '\n\n' :
+      acquit.trimEachLine(describe.comments[0]) + '\n' :
       '';
-    mdOutput += comment;
+    mdOutput += comment + '\n';
     report += comment;
 
     // This test file only has it() blocks underneath a
@@ -33,7 +33,10 @@ var generate = function ( dir , file ) {
     // it() calls.
     for (var j = 0; j < describe.blocks.length; ++j) {
       var it = describe.blocks[j];
+
       mdOutput += '#### It ' + it.contents + '\n\n';
+      report += '- ' +it.contents + '\n';
+
       mdOutput += it.comments[0] ?
         acquit.trimEachLine(it.comments[0]) + '\n\n' :
         '';
@@ -71,7 +74,7 @@ var walkSync = function(dir, filelist) {
 };
 
 var testsDir = './tests/';
-var report = '# Tests report\n\n';
+var report = '# Tests report\n';
 var doc = 'README';
 console.log('>> Producing tests documentation:');
 walkSync(testsDir);
