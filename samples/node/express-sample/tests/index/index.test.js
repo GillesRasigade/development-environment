@@ -1,5 +1,6 @@
 /**
- * Main page
+ * URL: [/](/)
+ * Main page tests.
  */
 describe('/ - Main page', function() {
 

@@ -3,7 +3,8 @@
 ## / - Main page
 
 
-Main page
+URL: [/](/)
+Main page tests.
 
 
 #### It renders successfully

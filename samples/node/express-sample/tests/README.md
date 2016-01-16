@@ -2,6 +2,7 @@
 
 ## [/ - Main page](./index/README.md)
 
-Main page
+URL: [/](/)
+Main page tests.
 
 - renders successfully
