@@ -1,5 +1,5 @@
 /**
- * Tests describing the index page.
+ * Index page tests
  */
 describe('Index Page', function() {
 

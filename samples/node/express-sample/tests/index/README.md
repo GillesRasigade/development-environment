@@ -3,7 +3,7 @@
 ## Index Page
 
 
-Tests describing the index page.
+Index page tests
 
 
 #### It renders successfully
