@@ -1,3 +1,4 @@
 node_modules
 Package Control.cache
 coverage
+npm-debug.log
