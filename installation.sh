@@ -114,6 +114,14 @@ function installation() {
 }
 
 t "INSTALLATION"
+
+if [ -d ".git" ]; then
+  git clone git@github.com:GillesRasigade/development-environment.git .
+else
+  git fetch
+  git pull
+fi
+
 system
 installation
 init
