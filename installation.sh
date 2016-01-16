@@ -116,7 +116,7 @@ function installation() {
 t "INSTALLATION"
 
 e "${PWD}";
-if [ -d "${PWD}/.git" ]; then
+if [ ! -d "${PWD}/.git" ]; then
   e "Cloning the development-environment project"
   git clone git@github.com:GillesRasigade/development-environment.git .
 else
