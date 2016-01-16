@@ -1,0 +1,623 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bas",
+				"bashrc"
+			],
+			[
+				"insta",
+				"install_once"
+			],
+			[
+				"i",
+				"install"
+			],
+			[
+				"GIT",
+				"GIT_PATH_MASTER"
+			],
+			[
+				"VERS",
+				"VERSIONING"
+			],
+			[
+				"VERSION",
+				"VERSIONING"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "samples/node/node-inspector/test/app.test.js",
+			"settings":
+			{
+				"buffer_size": 176,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "bash: cannot set terminal process group (3370): Inappropriate ioctl for device\nbash: no job control in this shell\nNow using node v5.4.1 (npm v3.3.12)\n/home/gilles/Documents/development/development-environment/samples/node/node-inspector/test\n/usr/local/lib/node_modules/mocha/lib/utils.js:626\n        throw new Error(\"cannot resolve path (or pattern) '\" + path + \"'\");\n        ^\n\nError: cannot resolve path (or pattern) 'apls'\n    at Object.lookupFiles (/usr/local/lib/node_modules/mocha/lib/utils.js:626:15)\n    at /usr/local/lib/node_modules/mocha/bin/_mocha:316:30\n    at Array.forEach (native)\n    at Object.<anonymous> (/usr/local/lib/node_modules/mocha/bin/_mocha:315:6)\n    at Module._compile (module.js:397:26)\n    at Object.Module._extensions..js (module.js:404:10)\n    at Module.load (module.js:343:32)\n    at Function.Module._load (module.js:300:12)\n    at Function.Module.runMain (module.js:429:10)\n    at startup (node.js:139:18)\n    at node.js:999:3\napp.test.js\ncoverage\napp.test.js\ncoverage\n\n\n  app.js\n    ✓ return double of a\n\n\n  1 passing (9ms)\n\n",
+			"settings":
+			{
+				"buffer_size": 1064,
+				"line_ending": "Unix",
+				"name": "*REPL* [shell]",
+				"scratch": true
+			}
+		},
+		{
+			"file": "config/sublime-text-3/Packages/User/mocha.sublime-build",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/sublime-text-3/Packages/User/istanbul.sublime-build",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "repl",
+		"selected_items":
+		[
+			[
+				"repl",
+				"SublimeREPL: Shell"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"buil",
+				"Build With: istanbul"
+			],
+			[
+				"ista",
+				"Build With: istanbul"
+			],
+			[
+				"buid",
+				"Build With: mocha"
+			],
+			[
+				"b",
+				"Build With: mocha"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"build",
+				"Build With: node"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"add uc",
+				"Git: Add Current File"
+			],
+			[
+				"package",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"pack",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/gilles/Documents/development/development-environment"
+	],
+	"file_history":
+	[
+		"/home/gilles/Documents/development/development-environment/development-environment.sublime-project",
+		"/home/gilles/Documents/development/development-environment/development-environment.sublime-workspace",
+		"/home/gilles/Documents/development/development-environment/config/zsh/.zshrc",
+		"/home/gilles/Documents/development/development-environment/config/bash/.bashrc",
+		"/home/gilles/.config/sublime-text-3/Packages/User/mocha.sublime-build",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/package.json",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/test/app.test.js",
+		"/home/gilles/.config/sublime-text-3/Packages/User/istanbul.sublime-build",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/app.js",
+		"/home/gilles/Documents/development/development-environment/installation.sh",
+		"/home/gilles/.bashrc",
+		"/home/gilles/.zshrc",
+		"/home/gilles/Documents/development/chauffeur-prive/install/website-backoffice/dev/environment.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/Backoffice/dev/environment.sh",
+		"/usr/local/chauffeur-prive/cp_lib/dev/mocks/user.js",
+		"/home/gilles/Documents/development/chauffeur-prive/install/identity-provider/dev/start.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/Backoffice/dev/start.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/install.sublime-project",
+		"/usr/local/chauffeur-prive/Backoffice/dev/Gruntfile.js",
+		"/usr/local/chauffeur-prive/Backoffice/dev/server/config/index.js",
+		"/usr/local/chauffeur-prive/Backoffice/dev/server/services/amqp.js",
+		"/usr/local/chauffeur-prive/Backoffice/dev/server/app.js",
+		"/home/gilles/Documents/development/chauffeur-prive/install/install.sh",
+		"/usr/local/chauffeur-prive/cp_lib/dev/Makefile",
+		"/usr/local/chauffeur-prive/API-Node/dev/Makefile",
+		"/home/gilles/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/gilles/.config/sublime-text-3/Packages/User/Package Control.sublime-settings.save",
+		"/home/gilles/Documents/development/chauffeur-prive/install/repos.txt",
+		"/run/user/1000/gvfs/sftp:host=192.168.0.33/home/gilles/.gitconfig",
+		"/home/gilles/Documents/development/development-environment/config/git/.gitconfig",
+		"/run/user/1000/gvfs/sftp:host=192.168.0.33/home/gilles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/run/user/1000/gvfs/sftp:host=192.168.0.33/home/gilles/.bashrc",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/environment.sh",
+		"/home/gilles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/run/user/1000/gvfs/sftp:host=192.168.0.33/home/gilles/.config/sublime-text-3/Packages/User/Package Control.user-ca-bundle",
+		"/home/gilles/Documents/development/chauffeur-prive/install/services/mongodb/main/Dockerfile",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/supervisor.conf",
+		"/home/gilles/Documents/development/chauffeur-prive/install/services/run.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/identity-provider/dev/environment.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/website-backoffice/dev/start.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/Backoffice/dev/supervisor.conf",
+		"/home/gilles/Documents/development/chauffeur-prive/install/identity-provider/dev/supervisor.conf",
+		"/usr/local/chauffeur-prive/identity-provider/dev/app.json",
+		"/usr/local/chauffeur-prive/identity-provider/dev/scripts/password.js",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/start_api.sh",
+		"/usr/local/chauffeur-prive/website-backoffice/dev/environments/development.sh",
+		"/usr/local/chauffeur-prive/API-Node/dev/test/seed_data/adminuser.js",
+		"/usr/local/chauffeur-prive/website-backoffice/dev/controllers/backoffice/backoffice.js",
+		"/usr/local/chauffeur-prive/website-backoffice/dev/controllers/app.js",
+		"/home/gilles/Documents/development/chauffeur-prive/install/website-backoffice/dev/supervisor.conf",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/start_dispatcher.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/Dockerfile",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/docker.sh",
+		"/home/gilles/Documents/development/chauffeur-prive/install/services/supervisor.conf",
+		"/home/gilles/Documents/development/chauffeur-prive/install/API-Node/dev/API-Node.conf",
+		"/home/gilles/Downloads/download",
+		"/home/gilles/Documents/development/environment/installation/ide.sh",
+		"/usr/share/applications/sublime_text.desktop"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/usr/local/chauffeur-prive/Backoffice/dev",
+			"/usr/local/chauffeur-prive/website-backoffice/dev",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"istan",
+			"sudo",
+			"source",
+			"\"\n",
+			"grep",
+			"	",
+			"USER",
+			"USER=",
+			"-e",
+			"-f",
+			"declaring queue",
+			"xdg",
+			"ip",
+			"ruby",
+			"identity-provider",
+			"ln -s",
+			"login failed",
+			"ci",
+			"ride",
+			"user_quote",
+			"redis",
+			"environments",
+			"mongo",
+			"npm",
+			"fb-",
+			"SETUP_DIR",
+			"PWD",
+			"PWD=",
+			"superviso",
+			"cleanup_previous_5_versions",
+			"cp_lib",
+			"destinat",
+			"nxlog",
+			"===",
+			"fi",
+			"GIT_PATH_MASTER",
+			"system_infos_fastbooking_clean_folders",
+			"install_projects_list",
+			"install_projects",
+			"install_system",
+			"initialize_ssh",
+			"install_system",
+			"system_infos",
+			"system_infos_commands",
+			"system_infos_forge",
+			"system_infos_git",
+			"git",
+			"GIT_PATH_MASTER"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"  "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "samples/node/node-inspector/test/app.test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1064,
+								1064
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"auto_indent": false,
+							"default_dir": "/home/gilles/Documents/development/development-environment",
+							"detect_indentation": false,
+							"gutter": false,
+							"history_arrows": true,
+							"indent_subsequent_lines": false,
+							"line_numbers": false,
+							"repl": true,
+							"repl_external_id": "shell",
+							"repl_id": "9bc558c2b41e43678bd8a1a4fd416856",
+							"repl_restart_args":
+							{
+								"cmd":
+								{
+									"linux":
+									[
+										"bash",
+										"-i"
+									],
+									"osx":
+									[
+										"bash",
+										"-i"
+									],
+									"windows":
+									[
+										"cmd.exe"
+									]
+								},
+								"cmd_postfix": "\n",
+								"cwd": "$file_path",
+								"encoding":
+								{
+									"linux": "utf-8",
+									"osx": "utf-8",
+									"windows": "$win_cmd_encoding"
+								},
+								"env":
+								{
+								},
+								"external_id": "shell",
+								"suppress_echo": true,
+								"syntax": "Packages/Text/Plain text.tmLanguage",
+								"type": "subprocess"
+							},
+							"repl_sublime2": false,
+							"smart_indent": false,
+							"spell_check": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/sublime-text-3/Packages/User/mocha.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config/sublime-text-3/Packages/User/istanbul.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 428.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "development-environment.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"build",
+				"~/.config/sublime-text-3/Packages/User/node.sublime-build"
+			],
+			[
+				"bashrc",
+				"~/Documents/development/development-environment/config/bash/.bashrc"
+			],
+			[
+				"bashr",
+				"~/.bashrc"
+			],
+			[
+				"instlat",
+				"~/Documents/development/development-environment/installation.sh"
+			],
+			[
+				"install",
+				"~/Documents/development/development-environment/installation.sh"
+			],
+			[
+				"insta",
+				"install.sh"
+			],
+			[
+				"envir",
+				"website-backoffice/dev/environment.sh"
+			],
+			[
+				"enviro",
+				"API-Node/dev/environment.sh"
+			],
+			[
+				"start",
+				"identity-provider/dev/start.sh"
+			],
+			[
+				"environ",
+				"website-backoffice/dev/environment.sh"
+			],
+			[
+				"mongo",
+				"services/mongodb/main/Dockerfile"
+			],
+			[
+				"run.",
+				"services/run.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 96.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 363.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

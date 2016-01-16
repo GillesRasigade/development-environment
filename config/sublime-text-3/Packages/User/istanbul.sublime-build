@@ -1,0 +1,4 @@
+{
+  "cmd": ["istanbul", "cover", "_mocha", "$file"],
+  "working_dir": "$project_path",
+}

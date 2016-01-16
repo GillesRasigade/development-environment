@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -b --recursive",
+    "test-debug": "NODE_ENV=test mocha --debug-brk -b --recursive",
     "debug": "DEBUG=1 node-debug --save-live-edit --debug-brk --web-port=8081 app.js"
   },
   "keywords": [
@@ -23,6 +24,11 @@
     "url": "git://github.com/GillesRasigade/development-environment.git"
   },
   "devDependencies": {
+    "karma": "^0.13.19",
+    "karma-cli": "^0.1.2",
+    "karma-coverage": "^0.5.3",
+    "karma-mocha": "^0.2.1",
+    "mocha": "^2.3.4",
     "should": "^8.1.1"
   }
 }

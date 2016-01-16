@@ -103,7 +103,7 @@ function installation() {
   nvm install 5
 
   # Installing development global dependencies
-  npm install -g grunt-cli bower mocha mocha-co istanbul node-inspector
+  npm install -g grunt-cli bower mocha istanbul node-inspector
 
 }
 
