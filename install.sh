@@ -113,7 +113,7 @@ function installation() {
   fi
 
   # Adding nvm
-  . "$NVM_DIR/nvm.sh"
+  source "/home/${USER}/.nvm/nvm.sh"
 
   # Installing Node 5
   r=$( nvm ls | grep $( cat .nvmrc ) );
