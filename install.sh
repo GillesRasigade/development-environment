@@ -42,7 +42,7 @@ function install_once() {
 
 function npm_install_once() {
   for package in "$@"; do
-    r=$( npm -g ls "$package" | grep "$package" )
+    r=$( npm list --depth 1 --global "$package" | grep "$package" )
     if [ "" == "$r" ]; then
       e "Installing npm package $package"
       npm install -g "$package"
@@ -95,7 +95,7 @@ function installation() {
   e "Minimal packages installation"
 
   # Basic packages installation:
-  install_once openssh-client openssh-server curl wget git zsh
+  install_once openssh-client openssh-server curl wget git zsh robomongo
 
   # Oh My Zsh - https://github.com/robbyrussell/oh-my-zsh
   if [ ! "~/.oh-my-zsh" ]; then
