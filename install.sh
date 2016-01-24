@@ -98,7 +98,7 @@ function installation() {
   install_once openssh-client openssh-server curl wget git zsh robomongo
 
   # Oh My Zsh - https://github.com/robbyrussell/oh-my-zsh
-  if [ ! "~/.oh-my-zsh" ]; then
+  if [ ! -d "/home/${USER}/.oh-my-zsh" ]; then
     sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
   fi
 
@@ -113,7 +113,7 @@ function installation() {
   fi
 
   # Adding nvm
-  . "$NVM_DIR/nvm.sh"
+  source "/home/${USER}/.nvm/nvm.sh"
 
   # Installing Node 5
   r=$( nvm ls | grep $( cat .nvmrc ) );
