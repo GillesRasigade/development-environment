@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"develo",
+				"development-environment"
+			],
+			[
+				"file",
+				"filelist"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
 				"bas",
 				"bashrc"
 			],
@@ -40,20 +52,208 @@
 			}
 		},
 		{
-			"contents": "bash: cannot set terminal process group (3370): Inappropriate ioctl for device\nbash: no job control in this shell\nNow using node v5.4.1 (npm v3.3.12)\n/home/gilles/Documents/development/development-environment/samples/node/node-inspector/test\n/usr/local/lib/node_modules/mocha/lib/utils.js:626\n        throw new Error(\"cannot resolve path (or pattern) '\" + path + \"'\");\n        ^\n\nError: cannot resolve path (or pattern) 'apls'\n    at Object.lookupFiles (/usr/local/lib/node_modules/mocha/lib/utils.js:626:15)\n    at /usr/local/lib/node_modules/mocha/bin/_mocha:316:30\n    at Array.forEach (native)\n    at Object.<anonymous> (/usr/local/lib/node_modules/mocha/bin/_mocha:315:6)\n    at Module._compile (module.js:397:26)\n    at Object.Module._extensions..js (module.js:404:10)\n    at Module.load (module.js:343:32)\n    at Function.Module._load (module.js:300:12)\n    at Function.Module.runMain (module.js:429:10)\n    at startup (node.js:139:18)\n    at node.js:999:3\napp.test.js\ncoverage\napp.test.js\ncoverage\n\n\n  app.js\n    ✓ return double of a\n\n\n  1 passing (9ms)\n\n",
+			"file": "install.sh",
 			"settings":
 			{
-				"buffer_size": 1064,
-				"line_ending": "Unix",
-				"name": "*REPL* [shell]",
-				"scratch": true
+				"buffer_size": 3301,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/sublime-text-3/Packages/User/mocha.sublime-build",
+			"file": "/home/gilles/Documents/development/chauffeur-prive/tools/test-scripts/Driver-emulator/main.py",
 			"settings":
 			{
-				"buffer_size": 32,
+				"buffer_size": 9627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/gilles/Downloads/users.json",
+			"settings":
+			{
+				"buffer_size": 2110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/bash/.bashrc",
+			"settings":
+			{
+				"buffer_size": 60,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".git/hooks/pre-commit.sample",
+			"settings":
+			{
+				"buffer_size": 1642,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/sublime-text-3/Packages/User/Gist.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 18,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/routes/index.js",
+			"settings":
+			{
+				"buffer_size": 205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/app.js",
+			"settings":
+			{
+				"buffer_size": 2380,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/bin/tests.js",
+			"settings":
+			{
+				"buffer_size": 2568,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/tests/index/index.test.js",
+			"settings":
+			{
+				"buffer_size": 548,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/tests/README.md",
+			"settings":
+			{
+				"buffer_size": 109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 49,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/views/error.jade",
+			"settings":
+			{
+				"buffer_size": 84,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/views/layout.jade",
+			"settings":
+			{
+				"buffer_size": 125,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/api.json",
+			"settings":
+			{
+				"buffer_size": 22272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var express = require('express');\nvar path = require('path');\nvar favicon = require('serve-favicon');\nvar logger = require('morgan');\nvar cookieParser = require('cookie-parser');\nvar bodyParser = require('body-parser');\n\nvar swagger         = require('swagger-express-middleware');\n\n// var swagger = require('swagger-express');\n\nvar routes = require('./routes/index');\nvar users = require('./routes/users');\n\nvar app = express();\nvar middleware = new swagger.Middleware(app);\n\nmiddleware.init(path.join(__dirname, 'api.yaml'), function(err) {\n\n  // view engine setup\n  app.set('views', path.join(__dirname, 'views'));\n  app.set('view engine', 'jade');\n\n  app.use(middleware.metadata());\n\n  app.use(\n    middleware.CORS(),\n    middleware.validateRequest()\n  );\n\n  // Add the Files middleware to the Express app\n  app.use(middleware.files({\n      apiPath: 'api-docs'\n      // Change the URL of the raw Swagger files\n      rawFilesPath: '/my/custom/path'\n  }));\n\n  // uncomment after placing your favicon in /public\n  //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));\n  app.use(logger('dev'));\n  app.use(bodyParser.json());\n  app.use(bodyParser.urlencoded({ extended: false }));\n  app.use(cookieParser());\n  app.use(express.static(path.join(__dirname, 'public')));\n\n  app.use('/assets',express.static('public'));\n\n  // app.use(swagger.init(app, {\n  //   apiVersion: '1.0',\n  //   swaggerVersion: '1.0',\n  //   swaggerURL: '/swagger',\n  //   swaggerJSON: '/swagger.json',\n  //   swaggerUI: './public/swagger/',\n  //   basePath: 'http://localhost:8181',\n  //   info: {\n  //     title: 'Express sample API',\n  //     description: 'RESTful API built on top of Express with Swagger, tests and automatic documentation.'\n  //   },\n  //   apis: ['./routes/index.js'],\n  //   middleware: function(req, res) {}\n  // }));\n\n  app.use('/', routes);\n  app.use('/users', users);\n\n  // catch 404 and forward to error handler\n  app.use(function(req, res, next) {\n    var err = new Error('Not Found');\n    err.status = 404;\n    next(err);\n  });\n\n  // error handlers\n\n  // development error handler\n  // will print stacktrace\n  if (app.get('env') === 'development') {\n    app.use(function(err, req, res, next) {\n      res.status(err.status || 500);\n      res.render('error', {\n        message: err.message,\n        error: err\n      });\n    });\n  }\n\n  // production error handler\n  // no stacktraces leaked to user\n  app.use(function(err, req, res, next) {\n    res.status(err.status || 500);\n    res.render('error', {\n      message: err.message,\n      error: {}\n    });\n  });\n\n  console.log(90);\n\n});\n\nmodule.exports = app;\n",
+			"settings":
+			{
+				"buffer_size": 2618,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/package.json",
+			"settings":
+			{
+				"buffer_size": 718,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "samples/node/express-sample/README.md",
+			"settings":
+			{
+				"buffer_size": 585,
+				"line_ending": "Unix",
+				"name": "# Express API sample code"
+			}
+		},
+		{
+			"file": "/home/gilles/Downloads/swagger-ui-forks/swagger-ui/.git/config",
+			"settings":
+			{
+				"buffer_size": 263,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 60,
+				"line_ending": "Unix",
+				"name": "# development-environment"
+			}
+		},
+		{
+			"contents": "/**\n * Load all necessary modules for the tests.\n */\n\nglobal.request = require('supertest'),\nglobal.express = require('express'),\nglobal.should = require('chai').should(),\nglobal.chai = require('chai'),\nglobal.expect = chai.expect,\nglobal.should = chai.should();\n\nglobal.app = require('../app');\n",
+			"file": "samples/node/express-sample/test/bootstrap.js",
+			"file_size": 296,
+			"file_write_time": 130973871130760176,
+			"settings":
+			{
+				"buffer_size": 296,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Swagger explorer</title>\n\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\n    <!--[if lt IE 9]>\n    <script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script><![endif]-->\n    <!--style type=\"text/css\"></style-->\n\n    <link href=\"css/index.css\" rel=\"stylesheet\"/>\n    <link href='css/standalone.css' rel='stylesheet'/>\n    <link href='css/api-explorer.css' rel='stylesheet' type='text/css'/>\n\n    <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>\n    <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>\n    <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>\n    <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>\n    <script src='lib/handlebars-2.0.0.js' type='text/javascript'></script>\n    <script src='lib/underscore-min.js' type='text/javascript'></script>\n    <script src='lib/backbone-min.js' type='text/javascript'></script>\n    <script src='swagger-ui.js' type='text/javascript'></script>\n    <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>\n    <script src='lib/marked.js' type='text/javascript'></script>\n    <script src='lib/swagger-oauth.js' type='text/javascript'></script>\n    <script src='lib/bootstrap.min.js' type='text/javascript'></script>\n\n    <script type=\"text/javascript\">\n        jQuery.browser = jQuery.browser || {};\n        (function () {\n            jQuery.browser.msie = jQuery.browser.msie || false;\n            jQuery.browser.version = jQuery.browser.version || 0;\n            if (navigator.userAgent.match(/MSIE ([0-9]+)\\./)) {\n                jQuery.browser.msie = true;\n                jQuery.browser.version = RegExp.$1;\n            }\n        })();\n    </script>\n\n    <script type=\"text/javascript\">\n        $(function () {\n            var url = window.location.search.match(/url=([^&]+)/);\n            if (url && url.length > 1) {\n                url = decodeURIComponent(url[1]);\n            } else {\n                url = \"http://petstore.swagger.io/v2/swagger.json\";\n            }\n\n            window.swaggerUi = new SwaggerUi({\n                url: url,\n                dom_id: \"swagger-ui-container\",\n                supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],\n                onComplete: function (swaggerApi, swaggerUi) {\n                    if (typeof initOAuth == \"function\") {\n\n                        initOAuth({\n                            clientId: \"ffe7748a-3a3f-4860-a02a-42ab08e4fde2\",\n                            realm: \"realm\",\n                            appName: \"Swagger\"\n                        });\n\n                    }\n\n                    $('pre code').each(function (i, e) {\n                        hljs.highlightBlock(e)\n                    });\n\n                    if (swaggerUi.options.url) {\n                        $('#input_baseUrl').val(swaggerUi.options.url);\n                    }\n                    if (swaggerUi.options.apiKey) {\n                        $('#input_apiKey').val(swaggerUi.options.apiKey);\n                    }\n\n                    $(\"[data-toggle='tooltip']\").tooltip();\n\n                    addApiKeyAuthorization();\n                },\n                onFailure: function (data) {\n                    log(\"Unable to Load SwaggerUI\");\n                },\n                docExpansion: \"none\",\n                sorter: \"alpha\"\n            });\n\n            function addApiKeyAuthorization() {\n                var key = encodeURIComponent($('#input_apiKey')[0].value);\n                if (key && key.trim() != \"\") {\n                    var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(\"Authorization\", \"Bearer \" + key, \"header\");\n                    window.swaggerUi.api.clientAuthorizations.add(\"key\", apiKeyAuth);\n                    log(\"added key \" + key);\n                }\n            }\n\n            $('#input_apiKey').change(addApiKeyAuthorization);\n            // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...\n            /*\n             var apiKey = \"myApiKeyXXXX123456789\";\n             $('#input_apiKey').val(apiKey);\n             */\n\n            window.swaggerUi.load();\n\n            function log() {\n                if ('console' in window) {\n                    console.log.apply(console, arguments);\n                }\n            }\n        });\n    </script>\n\n    <script type=\"text/javascript\">\n\n        $(function () {\n\n            $(window).scroll(function () {\n                var sticky = $(\".sticky-nav\");\n\n                i(sticky);\n                r(sticky);\n\n                function n() {\n                    return window.matchMedia(\"(min-width: 992px)\").matches\n                }\n\n                function e() {\n                    n() ? sticky.parents(\".sticky-nav-placeholder\").removeAttr(\"style\") : sticky.parents(\".sticky-nav-placeholder\").css(\"min-height\", sticky.outerHeight())\n                }\n\n                function i(n) {\n                    n.hasClass(\"fixed\") || (navOffset = n.offset().top);\n                    e();\n                    $(window).scrollTop() > navOffset ? $(\".modal.in\").length || n.addClass(\"fixed\") : n.removeClass(\"fixed\")\n                }\n\n                function r(e) {\n                    function i() {\n                        var i = $(window).scrollTop(), r = e.parents(\".sticky-nav\");\n                        return r.hasClass(\"fixed\") && !n() && (i = i + r.outerHeight() + 40), i\n                    }\n\n                    function r(e) {\n                        var t = o.next(\"[data-endpoint]\"), n = o.prev(\"[data-endpoint]\");\n                        return \"next\" === e ? t.length ? t : o.parent().next().find(\"[data-endpoint]\").first() : \"prev\" === e ? n.length ? n : o.parent().prev().find(\"[data-endpoint]\").last() : []\n                    }\n\n                    var nav = e.find(\"[data-navigator]\");\n                    if (nav.find(\"[data-endpoint][data-selected]\").length) {\n                        var o = nav.find(\"[data-endpoint][data-selected]\"),\n                            a = $(\"#\" + o.attr(\"data-endpoint\")),\n                            s = a.offset().top,\n                            l = (s + a.outerHeight(), r(\"next\")),\n                            u = r(\"prev\");\n                        if (l.length) {\n                            {\n                                var d = $(\"#\" + l.attr(\"data-endpoint\")), f = d.offset().top;\n                                f + d.outerHeight()\n                            }\n                            i() >= f && c(l)\n                        }\n                        if (u.length) {\n                            var p = $(\"#\" + u.attr(\"data-endpoint\")),\n                            g = u.offset().top;\n                            v = (g + p.outerHeight(), 100);\n                            i() < s - v && c(u)\n                        }\n                    }\n                }\n\n                function s() {\n                    var e = $(\".sticky-nav [data-navigator]\"),\n                        n = e.find(\"[data-endpoint]\").first();\n                    n.attr(\"data-selected\", \"\");\n                    u.find(\"[data-selected-value]\").html(n.text())\n                }\n\n                function c(e) {\n                    {\n                        var n = $(\".sticky-nav [data-navigator]\");\n                        $(\"#\" + e.attr(\"data-endpoint\"))\n                    }\n                    n.find(\"[data-resource]\").removeClass(\"active\");\n                    n.find(\"[data-selected]\").removeAttr(\"data-selected\");\n                    e.closest(\"[data-resource]\").addClass(\"active\");\n                    e.attr(\"data-selected\", \"\");\n                    sticky.find(\"[data-selected-value]\").html(e.text())\n                }\n            });\n\n        });\n    </script>\n\n    <script type=\"text/javascript\">\n        $(function () {\n            $(\"[data-toggle='tooltip']\").tooltip();\n        });\n    </script>\n\n</head>\n\n<body class=\"page-docs\" style=\"zoom: 1;\">\n<header class=\"site-header\">\n    <nav role=\"navigation\" class=\"navbar navbar-default\">\n        <div class=\"container\">\n            <div class=\"navbar-header\">\n                <button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\" class=\"navbar-toggle\"><span\n                        class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span\n                        class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>\n                <h1 class=\"navbar-brand\"><a href=\"http://swagger.io\"><span>swagger explorer</span></a></h1>\n            </div>\n            <div id=\"navbar-collapse\" class=\"collapse navbar-collapse\">\n                <ul class=\"nav navbar-nav navbar-left\">\n                    <li class=\"li-why\"><a href=\"http://swagger.io\" style=\"font-size: 25px; padding-left: 0px\">Swagger\n                        explorer</a></li>\n\n                </ul>\n            </div>\n        </div>\n    </nav>\n</header>\n\n<section class=\"content\">\n    <div id=\"api2-explorer\">\n        <div class=\"swagger-section page-docs\" style=\"zoom: 1\">\n            <div class=\"main-section\">\n                <div id=\"swagger-ui-container\" class=\"swagger-ui-wrap\">\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n</body>\n</html>\n\n",
+			"file": "samples/node/express-sample/public/swagger/index.html",
+			"file_size": 9297,
+			"file_write_time": 130974158522129369,
+			"settings":
+			{
+				"buffer_size": 9326,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<script>\nvar qp = null;\nif(window.location.hash) {\n  qp = location.hash.substring(1);\n}\nelse {\n  qp = location.search.substring(1);\n}\nqp = qp ? JSON.parse('{\"' + qp.replace(/&/g, '\",\"').replace(/=/g,'\":\"') + '\"}',\n  function(key, value) {\n    return key===\"\"?value:decodeURIComponent(value) }\n  ):{}\n\nif (window.opener.swaggerUi.tokenUrl)\n    window.opener.processOAuthCode(qp);\nelse\n    window.opener.onOAuthComplete(qp);\n\nwindow.close();\n</script>",
+			"file": "samples/node/express-sample/public/swagger/o2c.html",
+			"file_size": 449,
+			"file_write_time": 130974157389170080,
+			"settings":
+			{
+				"buffer_size": 449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * Tests describing the index page.\n */\ndescribe('Index Page', function() {\n\n  /**\n   * The page is answering to '/' with a status 200 and a body text containing\n   * 'Express' in its response.\n   */\n  it(\"renders successfully\", function(done) {\n    request(app).get('/')\n      .expect(200)\n      .end(function(err, res) {\n\n        expect(res)\n          .to.have.property('text')\n          .with.length.above(0);\n\n        expect(res.text)\n          .to.be.a('string')\n          .and.contains('Express');\n\n        done();\n      });\n  })\n})\n",
+			"file": "samples/node/express-sample/test/index/index.test.js",
+			"file_size": 543,
+			"file_write_time": 130973884255479558,
+			"settings":
+			{
+				"buffer_size": 543,
 				"line_ending": "Unix"
 			}
 		},
@@ -73,13 +273,125 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "repl",
+		"height": 138.0,
+		"last_filter": "push",
 		"selected_items":
 		[
 			[
-				"repl",
+				"push",
+				"Git: Push"
+			],
+			[
+				"qui",
+				"Git: Quick Commit"
+			],
+			[
+				"quick",
+				"Git: Quick Commit"
+			],
+			[
+				"comm",
+				"Git: Quick Commit"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"statu",
+				"Git: Status"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"puh",
+				"Git: Push"
+			],
+			[
+				"check",
+				"Git: Checkout Current File"
+			],
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"ccomm",
+				"Git: Custom Command"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"stash",
+				"Git: Stash Changes"
+			],
+			[
+				"fetch",
+				"Git: Fetch"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"mv",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ad",
+				"Git: Add Current File"
+			],
+			[
+				"push ",
+				"Git: Push Tags"
+			],
+			[
+				"tag",
+				"Git: New Tag"
+			],
+			[
+				"mard",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"bui",
+				"Build With: mocha"
+			],
+			[
+				"repl sh",
 				"SublimeREPL: Shell"
+			],
+			[
+				"rpel",
+				"SublimeREPL: Matlab"
+			],
+			[
+				"repl",
+				"SublimeREPL: PowerShell"
+			],
+			[
+				"repl ",
+				"SublimeREPL: Clojure"
 			],
 			[
 				"install",
@@ -102,28 +414,8 @@
 				"Build With: mocha"
 			],
 			[
-				"rena",
-				"File: Rename"
-			],
-			[
 				"build",
 				"Build With: node"
-			],
-			[
-				"push",
-				"Git: Push"
-			],
-			[
-				"comm",
-				"Git: Commit"
-			],
-			[
-				"add",
-				"Git: Add..."
-			],
-			[
-				"stat",
-				"Git: Status"
 			],
 			[
 				"add uc",
@@ -167,20 +459,66 @@
 	},
 	"expanded_folders":
 	[
-		"/home/gilles/Documents/development/development-environment"
+		"/home/gilles/Documents/development/development-environment",
+		"/home/gilles/Documents/development/development-environment/config",
+		"/home/gilles/Documents/development/development-environment/config/bash",
+		"/home/gilles/Documents/development/development-environment/config/git",
+		"/home/gilles/Documents/development/development-environment/config/sublime-text-3",
+		"/home/gilles/Documents/development/development-environment/config/sublime-text-3/Packages",
+		"/home/gilles/Documents/development/development-environment/config/sublime-text-3/Packages/User",
+		"/home/gilles/Documents/development/development-environment/samples",
+		"/home/gilles/Documents/development/development-environment/samples/node",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/bin",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/coverage",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/public",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/tests",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/views",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector"
 	],
 	"file_history":
 	[
+		"/home/gilles/Documents/development/development-environment/config/zsh/.zshrc",
+		"/home/gilles/Documents/development/development-environment/installation.sh",
+		"/home/gilles/.gitconfig",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/node_modules/lodash/internal/arrayPush.js",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/bin/www",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/tests/index/README.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/tests/README.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/test/README.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/package.json",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/test/index/README.md",
+		"/home/gilles/Documents/development/development-environment/.gitignore",
+		"/home/gilles/Downloads/swagger-ui-forks/swagger-ui/README.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/doc/tests.js",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/test.js",
+		"/home/gilles/Downloads/dynamic-html-client/docs/index.html",
+		"/home/gilles/.cache/.fr-GQPgDn/nodejs-server/api/swagger.yaml",
+		"/home/gilles/.cache/.fr-JwhetW/nodejs-server/controllers/UserService.js",
+		"/home/gilles/.cache/.fr-rnESLc/nodejs-server/controllers/ProductsService.js",
+		"/home/gilles/.cache/.fr-XLZrJ0/nodejs-server/controllers/EstimatesService.js",
+		"/home/gilles/.cache/.fr-zSb4xX/nodejs-server/controllers/Estimates.js",
+		"/home/gilles/.cache/.fr-VSHKbh/nodejs-server/package.json",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/api.yaml",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/public/swagger/swagger-ui.js",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/coverage/lcov.info",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/coverage/coverage.json",
+		"/home/gilles/Documents/development/development-environment/README.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/test/index.test.js.md",
+		"/home/gilles/Documents/development/development-environment/samples/node/express-sample/test/index.test.js",
+		"/home/gilles/Documents/development/development-environment/bootstrap.js",
+		"/home/gilles/Documents/development/development-environment/.nvmrc",
+		"/home/gilles/Downloads/driver-state/server/api/states/index.js",
+		"/home/gilles/Documents/development/development-environment/config/sublime-text-3/Packages/User/mocha.sublime-build",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/karma.conf.js",
+		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/app.js",
 		"/home/gilles/Documents/development/development-environment/development-environment.sublime-project",
 		"/home/gilles/Documents/development/development-environment/development-environment.sublime-workspace",
-		"/home/gilles/Documents/development/development-environment/config/zsh/.zshrc",
 		"/home/gilles/Documents/development/development-environment/config/bash/.bashrc",
 		"/home/gilles/.config/sublime-text-3/Packages/User/mocha.sublime-build",
 		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/package.json",
 		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/test/app.test.js",
 		"/home/gilles/.config/sublime-text-3/Packages/User/istanbul.sublime-build",
-		"/home/gilles/Documents/development/development-environment/samples/node/node-inspector/app.js",
-		"/home/gilles/Documents/development/development-environment/installation.sh",
 		"/home/gilles/.bashrc",
 		"/home/gilles/.zshrc",
 		"/home/gilles/Documents/development/chauffeur-prive/install/website-backoffice/dev/environment.sh",
@@ -232,13 +570,14 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/home/gilles/Documents/development/development-environment/samples/node/express-sample",
 			"/usr/local/chauffeur-prive/Backoffice/dev",
 			"/usr/local/chauffeur-prive/website-backoffice/dev",
 			""
@@ -249,6 +588,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"richState",
+			"time",
+			"plugin",
+			"dir",
+			"#",
+			";\n",
+			"'));\n",
+			"env",
+			"dev",
+			"swagger ex",
+			"8181",
+			"index.html",
+			"index",
+			"listen",
+			"file",
+			"Expresszdzd",
 			"istan",
 			"sudo",
 			"source",
@@ -343,81 +698,34 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "install.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1064,
+						"buffer_size": 3301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1064,
-								1064
+								1920,
+								1920
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"auto_indent": false,
-							"default_dir": "/home/gilles/Documents/development/development-environment",
-							"detect_indentation": false,
-							"gutter": false,
-							"history_arrows": true,
-							"indent_subsequent_lines": false,
-							"line_numbers": false,
-							"repl": true,
-							"repl_external_id": "shell",
-							"repl_id": "9bc558c2b41e43678bd8a1a4fd416856",
-							"repl_restart_args":
-							{
-								"cmd":
-								{
-									"linux":
-									[
-										"bash",
-										"-i"
-									],
-									"osx":
-									[
-										"bash",
-										"-i"
-									],
-									"windows":
-									[
-										"cmd.exe"
-									]
-								},
-								"cmd_postfix": "\n",
-								"cwd": "$file_path",
-								"encoding":
-								{
-									"linux": "utf-8",
-									"osx": "utf-8",
-									"windows": "$win_cmd_encoding"
-								},
-								"env":
-								{
-								},
-								"external_id": "shell",
-								"suppress_echo": true,
-								"syntax": "Packages/Text/Plain text.tmLanguage",
-								"type": "subprocess"
-							},
-							"repl_sublime2": false,
-							"smart_indent": false,
-							"spell_check": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1502.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -425,11 +733,621 @@
 				},
 				{
 					"buffer": 2,
-					"file": "config/sublime-text-3/Packages/User/mocha.sublime-build",
+					"file": "/home/gilles/Documents/development/chauffeur-prive/tools/test-scripts/Driver-emulator/main.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32,
+						"buffer_size": 9627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8057,
+								8057
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3793.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/gilles/Downloads/users.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2110,
+								2110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 17669.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/bash/.bashrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".git/hooks/pre-commit.sample",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "config/sublime-text-3/Packages/User/Gist.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "samples/node/express-sample/routes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "samples/node/express-sample/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								966,
+								966
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 567.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "samples/node/express-sample/bin/tests.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								627,
+								627
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "samples/node/express-sample/tests/index/index.test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "samples/node/express-sample/tests/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								49,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "samples/node/express-sample/views/error.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 84,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "samples/node/express-sample/views/layout.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "samples/node/express-sample/api.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1697,
+								1697
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/gilles/Documents/development/development-environment",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 837.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "samples/node/express-sample/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "samples/node/express-sample/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								495,
+								495
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# Express API sample code",
+							"parser": "github",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"target": "disk"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/home/gilles/Downloads/swagger-ui-forks/swagger-ui/.git/config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								263,
+								263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# development-environment",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "samples/node/express-sample/test/bootstrap.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								295,
+								295
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "samples/node/express-sample/public/swagger/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2095,
+								2095
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "samples/node/express-sample/public/swagger/o2c.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 449,
 						"regions":
 						{
 						},
@@ -442,17 +1360,47 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 24,
+					"file": "samples/node/express-sample/test/index/index.test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
 					"file": "config/sublime-text-3/Packages/User/istanbul.sublime-build",
 					"semi_transient": false,
 					"settings":
@@ -464,8 +1412,8 @@
 						"selection":
 						[
 							[
-								86,
-								86
+								34,
+								34
 							]
 						],
 						"settings":
@@ -476,7 +1424,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 25,
 					"type": "text"
 				}
 			]
@@ -515,13 +1463,17 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 428.0
+		"height": 242.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
 	"output.git":
+	{
+		"height": 118.0
+	},
+	"output.markdown":
 	{
 		"height": 118.0
 	},
@@ -539,6 +1491,74 @@
 		"selected_items":
 		[
 			[
+				"zs",
+				"config/zsh/.zshrc"
+			],
+			[
+				"instal",
+				"install.sh"
+			],
+			[
+				"push",
+				"samples/node/node-inspector/node_modules/lodash/internal/arrayPush.js"
+			],
+			[
+				"ww",
+				"samples/node/express-sample/bin/www"
+			],
+			[
+				"pack",
+				"samples/node/express-sample/package.json"
+			],
+			[
+				"index.test",
+				"samples/node/express-sample/tests/index/index.test.js"
+			],
+			[
+				"packag",
+				"samples/node/express-sample/package.json"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				".gitig",
+				".gitignore"
+			],
+			[
+				"test.js",
+				"samples/node/express-sample/test.js"
+			],
+			[
+				"api.json",
+				"samples/node/express-sample/api.json"
+			],
+			[
+				"www",
+				"samples/node/express-sample/bin/www"
+			],
+			[
+				"app.js",
+				"samples/node/express-sample/app.js"
+			],
+			[
+				"api",
+				"samples/node/express-sample/api.yaml"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"install",
+				"installation.sh"
+			],
+			[
+				"app",
+				"samples/node/node-inspector/app.js"
+			],
+			[
 				"build",
 				"~/.config/sublime-text-3/Packages/User/node.sublime-build"
 			],
@@ -552,10 +1572,6 @@
 			],
 			[
 				"instlat",
-				"~/Documents/development/development-environment/installation.sh"
-			],
-			[
-				"install",
 				"~/Documents/development/development-environment/installation.sh"
 			],
 			[
@@ -592,20 +1608,28 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "in",
 		"selected_items":
 		[
+			[
+				"in",
+				"~/Documents/development/chauffeur-prive/install/install.sublime-project"
+			],
+			[
+				"",
+				"~/Documents/development/development-environment/development-environment.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
 	"select_symbol":
 	{
-		"height": 96.0,
+		"height": 33.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 392.0
+		"width": 1237.0
 	},
 	"selected_group": 0,
 	"settings":
