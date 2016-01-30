@@ -89,6 +89,10 @@ function init() {
   t "Initializing .bashrc"
   addline_once "source ${PWD}/config/bash/.bashrc" "/home/${USER}/.bashrc"
   . "/home/${USER}/.bashrc"
+
+  # Docker installation:
+  wget -qO- https://get.docker.com/ | sh
+  sudo usermod -aG docker $(whoami)
 }
 
 function installation() {
