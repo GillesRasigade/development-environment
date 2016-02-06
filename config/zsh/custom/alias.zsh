@@ -14,3 +14,9 @@ function goto() {
 
   eval "cd /usr/local/$platform/$project/$environment"
 }
+
+function services() {
+  bash ~/Documents/development/bootstrap/services/run.sh "$1"
+  echo -e "\n"
+  docker ps
+}
