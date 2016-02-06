@@ -84,6 +84,10 @@ function init() {
   # zsh:
   t "Initializing .zshrc"
   ln -fs "${PWD}/config/zsh/.zshrc" "/home/${USER}/.zshrc"
+  if [ -d "$ZSH/custom" ]; then
+    mv "$ZSH/custom" "$ZSH/custom.backup"
+    ln -fs "${PWD}/config/zsh/custom" "$ZSH/custom"
+  fi
 
   # bashrc:
   t "Initializing .bashrc"
@@ -127,7 +131,7 @@ function installation() {
 
   # Installing development global dependencies
   e "Installing missing npm packages"
-  npm_install_once grunt-cli bower mocha istanbul nodemon node-inspector express-generator
+  npm_install_once grunt-cli bower mocha istanbul nodemon node-inspector eslint express-generator
 
 }
 
