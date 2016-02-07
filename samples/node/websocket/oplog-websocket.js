@@ -21,6 +21,6 @@ wss.on('connection', function connection(ws) {
   });
 
   oplog.on('op', function (data) {
-    ws.send(JSON.stringify(data), {mask: true});
+    ws.send(JSON.stringify(data));
   });
 });
