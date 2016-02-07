@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "mongo-oplog": "^1.0.1",
     "ws": "^1.0.1"
   }
 }
