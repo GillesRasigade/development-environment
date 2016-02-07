@@ -20,11 +20,6 @@ wss.on('connection', function connection(ws) {
     }
   });
 
-  // Stop sending heartbeat :D !
-  ws.on('close', function open() {
-    clearInterval(interval);
-  });
-
   oplog.on('op', function (data) {
     ws.send(JSON.stringify(data), {mask: true});
   });
