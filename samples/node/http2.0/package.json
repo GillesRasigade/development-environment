@@ -1,0 +1,19 @@
+{
+  "name": "http2.0",
+  "version": "1.0.0",
+  "description": "HTTP 2.0 over Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "http2.0"
+  ],
+  "author": "Gilles Rasigade",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.0-alpha.2",
+    "http2": "^3.3.2"
+  }
+}
