@@ -1,0 +1,19 @@
+{
+  "name": "json-schema-mongoose",
+  "version": "1.0.0",
+  "description": "JSON Schema conversion to mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose",
+    "json-schema"
+  ],
+  "author": "Gilles Rasigade",
+  "license": "ISC",
+  "dependencies": {
+    "json-schema-to-mongoose": "^0.2.2",
+    "mongoose": "^4.4.2"
+  }
+}
