@@ -10,5 +10,6 @@
   "hubot-shipit",
   "hubot-thank-you",
   "hubot-github-repo-event-notifier",
-  "hubot-heroku-deploy-notifier"
+  "hubot-heroku-deploy-notifier",
+  "hubot-cron"
 ]
