@@ -1,1 +1,1 @@
-web: cd alfred; bin/hubot -a campfire
+web: cd alfred; bin/hubot -a slack
