@@ -1,0 +1,24 @@
+{
+  "name": "development-environment",
+  "version": "1.0.0",
+  "description": "Development environment",
+  "main": "index.js",
+  "dependencies": {
+    "generator-hubot": "^0.3.1",
+    "yo": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GillesRasigade/development-environment.git"
+  },
+  "author": "Gilles Rasigade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GillesRasigade/development-environment/issues"
+  },
+  "homepage": "https://github.com/GillesRasigade/development-environment#readme"
+}
