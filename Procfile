@@ -1,1 +1,1 @@
-web: alfred/bin/hubot -a slack -n alfred
+web: alfred/hubot -a slack -n alfred
