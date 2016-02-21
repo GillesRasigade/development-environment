@@ -1,1 +1,1 @@
-web: cd alfred; bin/hubot -a slack -n alfred
+web: alfred/bin/hubot -a slack -n alfred
