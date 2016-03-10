@@ -131,7 +131,7 @@ function installation() {
 
   # Installing development global dependencies
   e "Installing missing npm packages"
-  npm_install_once grunt-cli bower mocha istanbul nodemon node-inspector eslint express-generator
+  npm_install_once grunt-cli bower mocha istanbul nodemon node-inspector eslint express-generator newman
 
 }
 
