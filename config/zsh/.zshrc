@@ -87,3 +87,9 @@ nvm use 5
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/home/gilles/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export WORKON_HOME=~/.environments
+source /usr/local/bin/virtualenvwrapper.sh
