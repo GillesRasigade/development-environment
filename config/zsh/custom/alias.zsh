@@ -16,7 +16,7 @@ function goto() {
 }
 
 function services() {
-  bash ~/Documents/development/bootstrap/services/run.sh "$1"
+  bash ~/Documents/development/bootstrap/services/run.sh "$1" "$2"
   echo -e "\n"
   docker ps
 }
