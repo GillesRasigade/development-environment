@@ -28,6 +28,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "git-lock": "npm-git-lock --incremental-install --repo https://github.com/GillesRasigade/npm-git-lock.git -v",
+    "heroku-prebuild": "npm install -g npm-git-lock && npm run git-lock",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
